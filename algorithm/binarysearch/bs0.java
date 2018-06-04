@@ -2,6 +2,7 @@ package algorithm.binarysearch;
 
 public class bs0 {
 	// search in rotated sorted array
+	// this array has a pivot
 	public int search(int[] nums, int target) {
 		int l = 0;
 		int r = nums.length - 1;
