@@ -1,5 +1,10 @@
 package algorithm.dynamicprogramming;
 
+//There is a array which has even numbers. The sum of array is old.
+//A and B are two people who pick up a number one time.
+//A pick up first.
+//Everyone can only pick up a number from head or tail.
+//Does A win definitely?
 public class PickNum {
 
 	public static boolean check(int[] a) {
@@ -28,14 +33,12 @@ public class PickNum {
 		if ((hi - lo + 1) % 2 == 0) {
 			res = Math.max(dp(lo + 1, hi, n, a) + a[lo], dp(lo, hi - 1, n, a) + a[hi]);
 		} else {
-			res = Math.min(dp(lo + 1, hi, n, a), dp(lo, hi - 1, n, a));
+			res = Math.max(dp(lo + 1, hi, n, a), dp(lo, hi - 1, n, a));
 		}
 		return res;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(check(new int[] { 9, 5, 10, 55, 1, 6 }));
-		int[] a = new int[] { 9, 5, 10, 55, 1, 6 };
-		int[][] n = new int[a.length][a.length];
+		System.out.println(check(new int[] { 1, 1, 2, 2 }));
 	}
 }
