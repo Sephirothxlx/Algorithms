@@ -50,8 +50,7 @@ public class Kmp {
 
 			if (k == -1 || p[j] == p[k]) {
 
-				if (p[++j] == p[++k]) { // 当两个字符相等时要跳过
-
+				if (p[++j] == p[++k]) { 
 					next[j] = next[k];
 
 				} else {
