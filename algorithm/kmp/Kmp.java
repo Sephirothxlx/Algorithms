@@ -86,6 +86,8 @@ public class Kmp {
 	}
 
 	public int[] Next(String t) {
+		char c = 0;
+		t=t+c;
 		int[] next = new int[t.length()];
 		next[0] = -1;
 		int k = -1;
@@ -113,7 +115,7 @@ public class Kmp {
 				j++;
 				if (j == t.length()) {
 					al.add(i - t.length());
-					j = 0;
+					j = next[j]==-1?0:next[j];
 				}
 			} else {
 				if (next[j] == -1) {
@@ -129,7 +131,8 @@ public class Kmp {
 
 	public static void main(String[] args) {
 		Kmp k = new Kmp();
-		System.out.println(Arrays.toString(k.Next("abc")));
+		System.out.println(Arrays.toString(k.Next("aba")));
 		System.out.println(Arrays.toString(k.getCommonString("abcabdcabcadbcbabwjehjw", "abc")));
+		System.out.println(Arrays.toString(k.getCommonString("ababababafbaba", "aba")));
 	}
 }
