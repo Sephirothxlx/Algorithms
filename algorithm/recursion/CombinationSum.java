@@ -4,32 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CombinationSum {
-	public static List<Integer> getList(int j, int[] candidates, int target) {
-		if (target == 0)
-			return new ArrayList<Integer>();
+	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		if (target < 0)
 			return null;
-		List<Integer> al = null;
-		for (int x = j; x < candidates.length; x++) {
-			List<Integer> t= getList(x, candidates, target - candidates[x]);
-			if (t != null) {
-				al = new ArrayList<Integer>();
-				al.add(candidates[x]);
-				al.addAll(t);
-			}
+		if (target == 0) {
+			ArrayList<Integer> a = new ArrayList<Integer>();
+			ArrayList<List<Integer>> r = new ArrayList<List<Integer>>();
+			r.add(a);
+			return r;
 		}
-		return al;
-	}
-
-	public List<List<Integer>> combinationSum(int[] candidates, int target) {
-		List<List<Integer>> l = new ArrayList<List<Integer>>();
+		List<List<Integer>> al = null;
+        List<List<Integer>> l = new ArrayList<List<Integer>> ();
 		for (int i = 0; i < candidates.length; i++) {
-			List<Integer> al = getList(i, candidates, target - candidates[i]);
+			int []A=new int[candidates.length-i];
+			System.arraycopy(candidates, i, A, 0, candidates.length-i);
+			al = combinationSum(A, target - candidates[i]);
 			if (al != null) {
-				List<Integer> t = new ArrayList<Integer>();
-				t.add(candidates[i]);
-				t.addAll(al);
-				l.add(t);
+				for (int j = 0; j < al.size(); j++) {
+					ArrayList<Integer> temp = new ArrayList<Integer>();
+					temp.add(candidates[i]);
+					temp.addAll(al.get(j));
+                    l.add(temp);
+				}
 			}
 		}
 		return l;
