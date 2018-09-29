@@ -1,4 +1,4 @@
-package algorithm.matrix;
+package algorithm.twoD_grid;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package algorithm.twoD_transformation;
+package algorithm.twoD_grid;
 
 public class Rotate {
 	public void rotate(int[][] matrix) {
