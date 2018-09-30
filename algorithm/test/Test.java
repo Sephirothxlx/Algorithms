@@ -68,6 +68,9 @@ public class Test {
 
 	public static void main(String[] args) {
 		Test t = new Test();
+		ArrayList<String> l=new ArrayList<String>();
+		l.add("s");
+		String []ss=l.toArray(new String[1]);
 		System.out.println(t.simplifyPath("/.hidden"));
 	}
 }
