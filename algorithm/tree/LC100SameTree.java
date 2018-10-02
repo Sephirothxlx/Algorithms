@@ -12,6 +12,8 @@ public class LC100SameTree {
 			if (p != null) {
 				if (q == null)
 					return false;
+				if(q.val!=p.val)
+					return false;
 				s.push(p);
 				s1.push(q);
 				p = p.left;
@@ -19,6 +21,12 @@ public class LC100SameTree {
 			} else {
 				p = s.pop();
 				p = p.right;
+				q = s1.pop();
+				if(q==null)
+					return false;
+				if(p.val!=q.val)
+					return false;
+				q = q.right;
 			}
 		}
 		if(!s1.isEmpty())
