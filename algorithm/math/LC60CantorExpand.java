@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CantorExpand {
+public class LC60CantorExpand {
 	public String getPermutation(int n, int k) {
 		List<Integer> l = new ArrayList<Integer>();
 		for (int i = 0; i < n; i++) {
