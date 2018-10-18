@@ -27,6 +27,8 @@ public class LC114FlattenBinaryTreetoLinkedList {
 //		}
 		flatten(root.right);
 		flatten(root.left);
-		
+		root.left=null;
+		root.right=pre;
+		pre=root;
 	}
 }
