@@ -11,9 +11,10 @@ public class LC120 {
 		int[] least = new int[n * (n + 1) / 2];
 		least[0] = triangle.get(0).get(0);
 		for (int i = 1; i < triangle.size(); i++) {
-			least[i * (i + 1) / 2] = least[i * (i - 1) / 2]+triangle.get(i).get(0);
-			least[i * (i + 1) / 2 + triangle.get(i).size() - 1] = least[i * (i - 1) / 2 + triangle.get(i - 1).size()
-					- 1]+triangle.get(i).get(triangle.get(i).size()-1);
+			least[i * (i + 1) / 2] = least[i * (i - 1) / 2] + triangle.get(i).get(0);
+			least[i * (i + 1) / 2 + triangle.get(i).size()
+					- 1] = least[i * (i - 1) / 2 + triangle.get(i - 1).size() - 1]
+							+ triangle.get(i).get(triangle.get(i).size() - 1);
 			for (int j = 1; j < triangle.get(i).size() - 1; j++) {
 				least[i * (i + 1) / 2 + j] = Math.min(least[i * (i - 1) / 2 + j - 1], least[i * (i - 1) / 2 + j])
 						+ triangle.get(i).get(j);
