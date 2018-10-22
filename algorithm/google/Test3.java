@@ -4,8 +4,14 @@ import java.util.Arrays;
 
 public class Test3 {
 	public int find(int[] stores, int k) {
+		if(stores.length==1)
+			return stores[0];
 		int i = 0;
 		int j = stores.length - 1;
+		if(k<=stores[i])
+			return stores[i];
+		if(k>=stores[j])
+			return stores[j];
 		while (i < j) {
 			if (j - i == 1) 
 				break;
@@ -18,7 +24,6 @@ public class Test3 {
 				j = mid;
 			}
 		}
-		if(i==0)
 		int a = k - stores[i];
 		int b = stores[j] - k;
 		if (a <= b)
