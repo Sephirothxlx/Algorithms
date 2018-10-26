@@ -31,6 +31,8 @@ public class LC128 {
 			}
 			if (c > big)
 				big = c;
+			if(big>nums.length/2)
+				break;
 		}
 		return big;
 	}
