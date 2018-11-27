@@ -15,10 +15,12 @@ public class Postorder {
 		s.push(root);
 		while (!s.isEmpty()) {
 			temp = s.peek();
+			//leaf
 			if (temp.left == null && temp.right == null) {
 				l.add(temp.val);
 				prev = temp;
 				s.pop();
+			//parent
 			} else if (prev != null && (temp.left == prev || temp.right == prev)) {
 				l.add(temp.val);
 				prev = temp;

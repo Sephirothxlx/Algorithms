@@ -7,7 +7,6 @@ import java.util.Stack;
 import algorithm.tree.TreeNode;
 
 public class LC94Inorder {
-
 	public List<Integer> inorderTraversal(TreeNode root) {
 		List<Integer> l = new ArrayList<Integer>();
 		Stack<TreeNode> s = new Stack<TreeNode>();

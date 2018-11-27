@@ -1,8 +1,11 @@
 package algorithm.test;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class TestConstructor {
 	public static class t {
@@ -25,5 +28,18 @@ public class TestConstructor {
 	    for(int x:h1.keySet()){
 	    	System.out.println(x);
 	    }
+	    int []a=new int[]{1,2,3,4,5};
+	    String ss[]=new String[]{"1","2","3"};
+	    Arrays.sort(ss,Collections.reverseOrder());
+	    SortedMap<Integer,Integer> s=new TreeMap<Integer,Integer>(new Comparator(){
+
+			@Override
+			public int compare(Object o1, Object o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+	    	
+	    });
+	    
 	}
 }
