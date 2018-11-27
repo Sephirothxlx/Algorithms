@@ -1,12 +1,12 @@
 package algorithm;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class FBLongestHoliday {
 	public static int getH(boolean[] b, int d) {
 		int[] days = new int[b.length];
-		List<Integer> al = new ArrayList<Integer>();
+		Queue<Integer> al = new LinkedList<Integer>();
 		int max = 0;
 		for (int i = 0; i < b.length; i++) {
 			if (i == 0) {
@@ -32,8 +32,7 @@ public class FBLongestHoliday {
 						if (al.isEmpty()) {
 							days[i] = 0;
 						} else {
-							days[i] = days[i - 1] + 1 - days[al.get(0)];
-							al.remove(0);
+							days[i] = days[i - 1] + 1 - days[al.poll()];
 						}
 					}
 				}
