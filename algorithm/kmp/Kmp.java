@@ -6,19 +6,21 @@ import java.util.Arrays;
 public class Kmp {
 	public int[] getnext(String ps) {
 		char[] p = ps.toCharArray();
-		int[] next = new int[p.length+1];
+		int[] next = new int[p.length];
+		//next array means the index+1 of prefix that is equal to suffix
+		//-1 means you need to move matching string too
+		//0 means you only need to move pattern string
 		next[0] = -1;
 		int i=-1;
-		int j=0;
+		int j=1;
 		while(j<p.length){
 			if(i==-1||p[i]==p[j]){
-				next[++j]=++i;
+				next[j++]=++i;
 			}else{
 				i=next[i];
 			}
 		}
 		return next;
-
 	}
 
 	public Integer[] getCommonString(String s, String t) {
@@ -31,7 +33,7 @@ public class Kmp {
 				j++;
 				if (j == t.length()) {
 					al.add(i - t.length());
-					j = next[j]==-1?0:next[j];
+					j = next[j-1]==-1?0:next[j-1];
 				}
 			} else {
 				if (next[j] == -1) {
@@ -48,6 +50,6 @@ public class Kmp {
 	public static void main(String[] args) {
 		Kmp k = new Kmp();
 		System.out.println(Arrays.toString(k.getCommonString("abcabdcabcadbcbabwjehjw", "abc")));
-		System.out.println(Arrays.toString(k.getCommonString("ababababafbaba", "aba")));
+		System.out.println(Arrays.toString(k.getCommonString("abcabcabcabcabsabcab", "abcab")));
 	}
 }
