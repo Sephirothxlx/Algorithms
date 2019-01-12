@@ -4,6 +4,10 @@ public class LC158 {
 	char [] buff=new char[4];
 	  int lastindex=0;
 	  int lastcontent=0;
+	  
+	  public int read4(char []c){
+		  return 0;
+	  }
 	  public int read(char[]buf, int n){
 	    if(n==0)
 	      return 0;
