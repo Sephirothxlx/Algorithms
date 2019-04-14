@@ -14,23 +14,12 @@ public class Postorder {
 		TreeNode prev = null;
 		s.push(root);
 		while (!s.isEmpty()) {
-			temp = s.peek();
-			//leaf
-			if (temp.left == null && temp.right == null) {
-				l.add(temp.val);
-				prev = temp;
-				s.pop();
-			//parent
-			} else if (prev != null && (temp.left == prev || temp.right == prev)) {
-				l.add(temp.val);
-				prev = temp;
-				s.pop();
-			} else {
-				if (temp.right != null)
-					s.push(temp.right);
-				if (temp.left != null)
-					s.push(temp.left);
-			}
+			temp=s.pop();
+			l.add(0,temp.val);
+			if(temp.left!=null)
+				s.push(temp.left);
+			if(temp.right!=null)
+				s.push(temp.right);
 		}
 		return l;
 	}
