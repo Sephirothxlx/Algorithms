@@ -1,4 +1,4 @@
-package databricks;
+package algorithm.databricks;
 
 public class LC41 {
     public int firstMissingPositive(int[] nums) {

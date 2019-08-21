@@ -1,3 +1,5 @@
+package algorithm.databricks;
+
 public class SparseNumber {
     public static boolean checkIfSparse(int n){
         return (n&(n>>1))==0;

@@ -1,4 +1,4 @@
-package databricks;
+package algorithm.databricks;
 
 import java.util.Stack;
 
