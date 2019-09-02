@@ -7,9 +7,7 @@ public class Kmp {
 	public int[] getnext(String ps) {
 		char[] p = ps.toCharArray();
 		int[] next = new int[p.length];
-		//next array means the index of prefix that is equal to suffix
-		//-1 means you need to move matching string too
-		//0 means you only need to move pattern string
+		//next array means the length of prefix that is equal to suffix
 		next[0] = 0;
 		int i=1;
 		int j=0;
@@ -55,6 +53,6 @@ public class Kmp {
 		Kmp k = new Kmp();
 		System.out.println(Arrays.toString(k.getCommonString("abcabdcabcadbcbabwjehjw", "abc")));
 		System.out.println(Arrays.toString(k.getCommonString("aabaabaaasdaabaa", "aabaa")));
-		System.out.println(Arrays.toString(k.getCommonString("aacaacaaa", "aacaa")));
+		System.out.println(Arrays.toString(k.getCommonString("aacaacaaa", "aa")));
 	}
 }

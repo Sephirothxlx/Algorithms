@@ -1,6 +1,8 @@
 package algorithm.databricks;
 
 public class LC41 {
+	//O(n)
+	//no extra space
     public int firstMissingPositive(int[] nums) {
         int n=nums.length;
         if(n==0)
