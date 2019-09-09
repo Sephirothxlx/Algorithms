@@ -17,7 +17,6 @@ public class SplitSQL {
         			quote=!quote;
         		}else if(c[i]=='\\'&&i+1<c.length) {
         			temp+=c[i+1];
-        			
         			i++;
         		}
         		i++;

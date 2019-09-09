@@ -69,8 +69,6 @@ public class MorrisTraversal {
     }
 
     public void postorder(Node root){
-    	List<Integer> l=new ArrayList<>();
-    	l.add(0,1);
         if(root==null)
             return ;
         Node current=root;

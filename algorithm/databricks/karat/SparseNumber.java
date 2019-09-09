@@ -1,4 +1,4 @@
-package algorithm.databricks;
+package algorithm.databricks.karat;
 
 public class SparseNumber {
     public static boolean checkIfSparse(int n){
