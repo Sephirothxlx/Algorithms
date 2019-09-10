@@ -23,4 +23,31 @@ public class Preorder {
 		}
 		return l;
 	}
+	
+	public void traverse(TreeNode root) {
+		if(root==null)
+			return;
+		TreeNode temp=root;
+		while(temp!=null) {
+			System.out.print(temp.val);
+			if(temp.left!=null)
+				temp=temp.left;
+			else if(temp.right!=null)
+				temp=temp.right;
+			else {
+				TreeNode parent=temp.parent;
+				while(parent!=null) {
+					if(temp==parent.left&&parent.right!=null) {
+						temp=parent.right;
+						break;
+					}else {
+						temp=parent;
+						parent=parent.parent;
+					}
+				}
+				if(parent==null)
+					root=null;
+			}
+		}
+	}
 }

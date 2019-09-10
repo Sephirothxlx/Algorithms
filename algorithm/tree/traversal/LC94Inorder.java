@@ -23,4 +23,38 @@ public class LC94Inorder {
 		}
 		return l;
 	}
+	
+	public TreeNode inorderFirst(TreeNode root) {
+		if(root==null)
+			return null;
+		while(root.left!=null) {
+			root=root.left;
+		}
+		return root;
+	}
+	
+	public void traverse(TreeNode root) {
+		if(root==null)
+			return;
+		root=inorderFirst(root);
+		while(root!=null) {
+			System.out.print(root.val);
+			if(root.right!=null) {
+				root=inorderFirst(root.right);
+			}else {
+				TreeNode parent=root.parent;
+				while(parent!=null) {
+					if(root==parent.left) {
+						root=parent;
+						break;
+					}else {
+						root=parent;
+						parent=parent.parent;
+					}
+				}
+				if(parent==null)
+					root=null;
+			}
+		}
+	}
 }

@@ -1,4 +1,4 @@
-package algorithm.thumbtack;
+package algorithm.thumbtack.OA;
 
 public class Questions2 {
 	public static int convert(String s){

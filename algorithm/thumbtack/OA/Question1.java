@@ -1,4 +1,4 @@
-package algorithm.thumbtack;
+package algorithm.thumbtack.OA;
 
 import java.util.ArrayList;
 import java.util.Collections;

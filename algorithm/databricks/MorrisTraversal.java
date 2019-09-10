@@ -32,10 +32,10 @@ public class MorrisTraversal {
         			pre=pre.right;
         		}
         		if(pre.right==null) {
-        			visit(current);
         			pre.right=current;
         			current=current.left;
         		}else {
+        			visit(current); 
         			current=current.right;
         			pre.right=null;
         		}
