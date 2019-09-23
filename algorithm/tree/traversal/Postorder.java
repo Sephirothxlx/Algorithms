@@ -24,5 +24,36 @@ public class Postorder {
 		return l;
 	}
 	
+	public TreeNode postOrderFirst(TreeNode root) {
+		if(root==null)
+			return null;
+		while(true) {
+			if(root.left!=null)
+				root=root.left;
+			else if(root.right!=null)
+				root=root.right;
+			else
+				return root;
+		}
+	}
 	
+	
+	public void postorder(TreeNode root) {
+		if(root==null)
+			return;
+		root=postOrderFirst(root);
+		while(root!=null) {
+			System.out.println(root.val);
+			TreeNode parent=root.parent;
+			if(parent!=null) {
+				if(parent.left==root&&parent.right!=null) {
+					root=postOrderFirst(root.right);
+				}else {
+					root=parent;
+				}
+			}else {
+				root=null;
+			}
+		}
+	}
 }
