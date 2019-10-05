@@ -1,6 +1,7 @@
 package algorithm;
 
 import java.io.IOException;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,6 +14,19 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class Dom {
+	public ReentrantLock l=new ReentrantLock();
+	
+	public void test() {
+		l.lock();
+		try {
+			
+		}catch(Exception e) {
+			
+		}finally {
+			l.unlock();
+		}
+	}
+	
 	public static void main(String[]args) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         try {
