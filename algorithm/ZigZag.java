@@ -30,8 +30,4 @@ public class ZigZag {
         }
         return res;
     }
-	public static void main(String[]args) {
-		ZigZag z=new ZigZag();
-		System.out.println(z.convert("PAYPALISHIRING", 4));
-	}
 }
