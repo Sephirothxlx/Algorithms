@@ -46,7 +46,7 @@ public class Preorder {
 					}
 				}
 				if(parent==null)
-					root=null;
+					temp=null;
 			}
 		}
 	}
